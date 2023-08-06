@@ -1,0 +1,17 @@
+﻿<Border x:Class="MyPlanogramDesktopApp.Customs.BorderedPicture"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Width="100"
+             Height="100"
+             BorderBrush="Red"
+             MouseEnter="Border_MouseEnter"
+             MouseLeave="Border_MouseLeave"
+             MouseLeftButtonUp="Border_MouseLeftButtonUp"
+             MouseDown="Border_MouseDown"
+             >
+    
+    <Image x:Name="Picture" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+</Border>

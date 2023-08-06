@@ -1,0 +1,18 @@
+﻿<StackPanel x:Class="Testing.Customs.RecordTracker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Testing.Customs"
+             mc:Ignorable="d"
+             Orientation="Horizontal"
+             Background="LightGray"
+             >
+    <Button x:Name="GoFirstButton" ToolTip="Go First Record" Content="⮜⮜" Padding="4"  VerticalContentAlignment="Center"/>
+    <Button x:Name="GoPreviousButton" Content="⮜" ToolTip="Go Previous Record" Padding="4" Width="{Binding ElementName=GoFirstButton,Path=ActualWidth}"  VerticalContentAlignment="Center"/>
+    <Label x:Name="Records" Background="White" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+    <Button x:Name="GoNextButton" Content="⮞" ToolTip="Go Next Record" Padding="4" Width="{Binding ElementName=GoFirstButton,Path=ActualWidth}"  VerticalContentAlignment="Center"/>
+    <Button x:Name="GoLastButton" Content="⮞⮞" ToolTip="Go Last Record" Padding="4" Width="{Binding ElementName=GoFirstButton,Path=ActualWidth}"  VerticalContentAlignment="Center"/>
+    <Button Margin="5,0,0,0" x:Name="GoNewButton" Content="*" ToolTip="Go New Record" Padding="4" Width="{Binding ElementName=GoFirstButton,Path=ActualWidth}" HorizontalContentAlignment="Center" Foreground="Yellow" VerticalContentAlignment="Center"/>
+
+</StackPanel>
