@@ -1,0 +1,131 @@
+﻿<Window x:Class="MyPlanogramDesktopApp.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyPlanogramDesktopApp.View"
+        mc:Ignorable="d"
+        Title="My Planogram" 
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        xmlns:items="clr-namespace:MyPlanogramDesktopApp.View.Item"
+        xmlns:sections="clr-namespace:MyPlanogramDesktopApp.View.Section"
+        xmlns:bays="clr-namespace:MyPlanogramDesktopApp.View.Bay"
+        xmlns:shelf="clr-namespace:MyPlanogramDesktopApp.View.Shelf"
+        xmlns:planogram="clr-namespace:MyPlanogramDesktopApp.View.Planogram"   
+        xmlns:offer="clr-namespace:MyPlanogramDesktopApp.View.Offer"
+        xmlns:excel="clr-namespace:MyPlanogramDesktopApp.View.ExcelReaders"
+        Height="450" Width="800"
+        >
+    
+    <Grid>
+        <TabControl>
+            <TabItem Header="ITEMS">
+                <Frame>
+                    <Frame.Content>
+                        <items:ItemList x:Name="ItemList"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="SECTIONS">
+                <Frame>
+                    <Frame.Content>
+                        <sections:SectionList x:Name="SectionList"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="BAYS">
+                <Frame>
+                    <Frame.Content>
+                        <bays:BayList x:Name="BayList"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="SHELVES">
+                <Frame>
+                    <Frame.Content>
+                        <shelf:ShelfList x:Name="ShelvesList"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="DEPARTMENT">
+                <Frame>
+                    <Frame.Content>
+                        <local:DepartmentView x:Name="DepartmentView"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+            
+            <TabItem Header="PLANOGRAM">
+                <Frame>
+                    <Frame.Content>
+                        <planogram:PlanogramList x:Name="PlanogramList"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="PLAN VIEWER">
+                <Frame>
+                    <Frame.Content>
+                        <local:PlanViewer x:Name="PlanViewer"/>
+                        <!--<local:Tela/>-->
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="OFFERS">
+                <Frame>
+                    <Frame.Content>
+                        <offer:OfferList x:Name="OfferList"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="IMPORT DELIVERY">
+                <Frame>
+                    <Frame.Content>
+                        <excel:ImportDelivery/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="IMPORT BARCODE">
+                <Frame>
+                    <Frame.Content>
+                        <excel:ImportBarcode/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="IMPORT BEST SELLERS">
+                <Frame>
+                    <Frame.Content>
+                        <excel:ImportBestSellers/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+
+            <TabItem Header="IMPORT OFFERS">
+                <Frame>
+                    <Frame.Content>
+                        <excel:ImportOffers/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+            <TabItem Header="BARCODES">
+                <Frame>
+                    <Frame.Content>
+                        <local:BarcodeList x:Name="BarcodeList"/>
+                    </Frame.Content>
+                </Frame>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

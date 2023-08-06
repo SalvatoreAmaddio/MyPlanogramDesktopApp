@@ -1,0 +1,116 @@
+﻿<Page x:Class="MyPlanogramDesktopApp.View.PlanViewer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyPlanogramDesktopApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlanViewer"
+      xmlns:controller="clr-namespace:MyPlanogramDesktopApp.Controller"
+      xmlns:customs="clr-namespace:Testing.Customs"
+      xmlns:MyTemplate="clr-namespace:MyPlanogramDesktopApp.Customs"
+      >
+    
+    <Page.DataContext>
+        <controller:ShelfListController/>
+    </Page.DataContext>
+    
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{Binding SettingController.HeightCol}"/>
+        </Grid.ColumnDefinitions>
+        
+        <Border Background="LightGray" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Padding="5" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="SECTION" VerticalAlignment="Center"/>
+                <customs:Combo PlaceHolder="Section" 
+                               ItemsSource="{Binding Sections}"
+                               SelectedItem="{Binding SelectedSection,Mode=TwoWay}"
+                               DisplayMemberPath="SectionName"
+                               />
+
+                <Label Content="BAY" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <customs:Combo PlaceHolder="Bay"
+                               ItemsSource="{Binding Bays}"
+                               SelectedItem="{Binding SelectedBay,Mode=TwoWay}"
+                               FilterAndSort="{Binding BayFilter}"
+                               />
+
+                <Label Content="{Binding SelectedBay.BayTitle}" 
+                       FontWeight="Bold"
+                       ContentStringFormat="({0})" 
+                       VerticalContentAlignment="Center" 
+                       HorizontalContentAlignment="Left"
+                       HorizontalAlignment="Left"
+                       />
+
+                <Label VerticalContentAlignment="Center" Content="Planogram Width"  Margin="0,0,10,0"/>
+                <TextBox Text="{Binding SettingController.ListWidth}" VerticalContentAlignment="Center" Margin="0,0,10,0"/>
+
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" Padding="4">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <customs:SaveButton Command="{Binding SettingController.SaveCMD}"/>
+                        <MyTemplate:JsonButton Grid.Column="1" Command="{Binding SettingController.ReadCMD}"/>
+                        <MyTemplate:PrintButton Grid.Column="2" Command="{Binding SettingController.ConvertToPngCMD}"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <customs:Lista Grid.Row="1" 
+                       Margin="0,0,0,0"
+                       x:Name="Fixture"
+                       ItemsSource="{Binding RecordSource,Mode=TwoWay}" SelectedItem="{Binding SelectedRecord,Mode=TwoWay}" FilterAndSort="{Binding ShelvesFilter}" UseHeader="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <MyTemplate:Fixture ShelfModel="{Binding .}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </customs:Lista>
+
+        <Border Grid.Row="1" Grid.Column="1" Background="White">
+            <Grid DataContext="{Binding SettingController}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="{Binding WidthCol}"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Content="{Binding Content}" Command="{Binding OpenSettingsCMD}"/>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+
+                    <customs:Lista ItemsSource="{Binding Settings,Mode=TwoWay}" HorizontalAlignment="Stretch">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <MyTemplate:DynamicControl SettingOption="{Binding .}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </customs:Lista>
+
+                    <StackPanel Grid.Row="1">
+                        <Label Content="{Binding BorderedPictureModel.Planogram.PlanoID}"/>
+                        <Button Content="HORIZONTAL" Command="{Binding TabularCMD}"/>
+                        <Button Content="UNMERGE" Command="{Binding UntabularCMD}"/>
+                        <Button Content="VERTICAL"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

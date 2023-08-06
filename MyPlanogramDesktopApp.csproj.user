@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Customs\DeleteButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customs\DynamicControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customs\ExcelButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customs\Fixture.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customs\JsonButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customs\PrintButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customs\SaveButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Bay\BayList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\BarcodeList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\DepartmentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ExcelReaders\ImportBarcode.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ExcelReaders\ImportBestSellers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ExcelReaders\ImportDelivery.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ExcelReaders\ImportOffers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Item\ItemForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Item\ItemList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Offer\OfferList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Planogram\PlanogramList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Section\SectionList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Shelf\ShelfList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\PlanogramDesigner\PlanViewer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Customs\BorderedPicture.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\Combo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\DeleteButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\DynamicControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\ExcelButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\FormPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\JsonButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\Lista.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\Loading.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\Fixture.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\PrintButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\RecordStatus.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\RecordTracker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\SaveButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\SearchBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customs\ViewCell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Bay\BayList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\BarcodeList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\DepartmentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ExcelReaders\ImportBarcode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ExcelReaders\ImportBestSellers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ExcelReaders\ImportDelivery.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ExcelReaders\ImportOffers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Item\ItemForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Item\ItemList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Offer\OfferList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Planogram\PlanogramList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Section\SectionList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Shelf\ShelfList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\PlanogramDesigner\PlanViewer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
